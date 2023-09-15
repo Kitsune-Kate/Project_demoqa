@@ -2,9 +2,11 @@ package test;
 
 import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.BeforeAll;
 import page_objects.*;
 
+import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.PageLoadStrategy.EAGER;
 
 
@@ -24,5 +26,10 @@ public class BaseTest {
         Configuration.pageLoadStrategy = EAGER.toString();
     }
 
+
+    @Step("Перейти на {url}")
+    public static void openUrl(String url) {
+        open(url);
+    }
 
 }

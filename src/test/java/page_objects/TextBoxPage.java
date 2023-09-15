@@ -2,9 +2,12 @@ package page_objects;
 
 import com.codeborne.selenide.Condition;
 import dto.UserData;
+import io.qameta.allure.Step;
 
 @SuppressWarnings("UnusedReturnValue")
 public class TextBoxPage extends BasePage {
+
+    @Step("Заполнить поля Full Name, Email, Current Address, Permanent Address: {userData}")
     public TextBoxPage fillAllFields(UserData userData) {
         textBoxPageLocators.getFullName().setValue(userData.getFullName());
         textBoxPageLocators.getEmail().setValue(userData.getEmail());
@@ -13,11 +16,13 @@ public class TextBoxPage extends BasePage {
         return this;
     }
 
+    @Step("Нажать на кнопку 'Submit'")
     public TextBoxPage clickOnSubmit() {
         textBoxPageLocators.getButtonSubmit().click();
         return this;
     }
 
+    @Step("Проверить, что данные в блоке сохранены корректно")
     public TextBoxPage checkSavedDataInBlock(UserData userData) {
         textBoxPageLocators.getOutputName().should(Condition.text(userData.getFullName()));
         textBoxPageLocators.getOutputEmail().should(Condition.text(userData.getEmail()));

@@ -2,10 +2,8 @@ package test;
 
 import dto.UserData;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selenide.open;
 
 public class DemoQATest extends BaseTest {
 
@@ -13,10 +11,11 @@ public class DemoQATest extends BaseTest {
 
     @BeforeEach
     void setUp() {
-        open("https://demoqa.com/");
+        openUrl("https://demoqa.com/");
     }
 
     @Test
+    @DisplayName("Проверки demoqa.com")
     void checkMainPage() {
         mainPage
                 .clickOnElements();
