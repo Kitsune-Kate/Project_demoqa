@@ -12,7 +12,7 @@ public class ButtonsPage extends BasePage {
 
     }
 
-    @Step("Проверить, что появился текст 'You have done a dynamic click'")
+    @Step("Проверить, что появился текст '{expectedText}'")
     public ButtonsPage checkDisplayedTextAfterClickMe(String expectedText) {
         buttonsPageLocators.getDynamicClickMessage().should(Condition.text(expectedText));
         return this;
@@ -26,7 +26,7 @@ public class ButtonsPage extends BasePage {
 
     }
 
-    @Step("Проверить, что появился текст 'You have done a right click'")
+    @Step("Проверить, что появился текст '{expectedText}'")
     public ButtonsPage checkDisplayedTextAfterRightClickMe(String expectedText) {
         buttonsPageLocators.getRightClickMessage().should(Condition.text(expectedText));
         return this;
@@ -40,7 +40,7 @@ public class ButtonsPage extends BasePage {
 
     }
 
-    @Step("Проверить, что появился текст 'You have done a double click'")
+    @Step("Проверить, что появился текст '{expectedText}'")
     public ButtonsPage checkDisplayedTextAfterDoubleClickMe(String expectedText) {
         buttonsPageLocators.getDoubleClickMessage().should(Condition.text(expectedText));
         return this;

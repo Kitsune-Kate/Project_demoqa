@@ -7,7 +7,7 @@ import io.qameta.allure.Step;
 @SuppressWarnings("UnusedReturnValue")
 public class TextBoxPage extends BasePage {
 
-    @Step("Заполнить поля Full Name, Email, Current Address, Permanent Address: {userData}")
+    @Step("Заполнить поля Full Name: '{userData.fullName}', Email: '{userData.email}', Current Address: '{userData.currentAddress}', Permanent Address: '{userData.permanentAddress}'")
     public TextBoxPage fillAllFields(UserData userData) {
         textBoxPageLocators.getFullName().setValue(userData.getFullName());
         textBoxPageLocators.getEmail().setValue(userData.getEmail());

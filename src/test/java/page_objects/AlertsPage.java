@@ -28,37 +28,37 @@ public class AlertsPage extends BasePage {
         return this;
     }
 
-    @Step("Закрыть уведомление")
+    @Step("Нажать на кнопку 'Click me'  рядом с On button click, confirm box will appear")
     public AlertsPage clickOnButtonClickMeToSeeConfirmBox() {
         alertsPageLocators.getButtonConfirmClickMe().click();
         return this;
     }
 
-    @Step("Нажать на кнопку 'Click me'  рядом с On button click, confirm box will appear")
+    @Step("Нажать на кнопку 'Да' в уведомление")
     public AlertsPage acceptConfirmBox() {
         Selenide.confirm();
         return this;
     }
 
-    @Step("Нажать на кнопку 'Да' в уведомление")
+    @Step("Проверить, что появился текст '{expected}' ")
     public AlertsPage checkDisplayedConfirmResultText(String expected) {
         alertsPageLocators.getTextConfirmResult().should(Condition.text(expected));
         return this;
     }
 
-    @Step("Проверить, что появился текст You selected Ok")
+    @Step("Нажать на кнопку «Click me»  рядом с On button click, prompt box will appear'")
     public AlertsPage clickOnButtonClickMeToSeePrompt() {
         alertsPageLocators.getButtonPromptClickMe().click();
         return this;
     }
 
-    @Step("Заполнить поле в уведомление данными: Test name")
+    @Step("Заполнить поле в уведомление данными: '{name}'")
     public AlertsPage fillFieldPrompt(String name) {
         Selenide.prompt(name);
         return this;
     }
 
-    @Step("Проверить, что появился текст You entered Test name")
+    @Step("Проверить, что появился текст '{expected}'")
     public AlertsPage checkDisplayedPromptResultText(String expected) {
         alertsPageLocators.getTextPromptResult().should(Condition.text(expected));
         return this;

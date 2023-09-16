@@ -27,7 +27,7 @@ public class BaseTest {
     }
 
 
-    @Step("Перейти на {url}")
+    @Step("Перейти на '{url}'")
     public static void openUrl(String url) {
         open(url);
     }
